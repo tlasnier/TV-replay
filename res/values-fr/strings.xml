@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TV Replay</string>
+    <string name="selection">Sélectionner les émissions par :</string>
+    <string name="genre">Genre</string>
+	<string name="chaine">Chaîne</string>
+	<string name="flux">En Direct</string>
+	<string name="radio">Radio</string>
+	<string name="erreur_emission">Aucune émission trouvée</string>
+	
+</resources>

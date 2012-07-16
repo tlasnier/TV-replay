@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">TV Replay</string>
+    <string name="selection">Select shows by :</string>
+    <string name="genre">Theme</string>
+	<string name="chaine">Channel</string>
+	<string name="flux">Live</string>
+	<string name="radio">Radio</string>
+	<string name="erreur_emission">No show found</string>
+	
+</resources>
