@@ -1,11 +1,7 @@
 package fr.infosat.tvreplay;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -34,8 +30,7 @@ public class MainActivity extends Activity
 	{
 		Uri streamURL = Uri.parse("udp://230.0.0.3:1234");
 		Intent streamIntent = new Intent(Intent.ACTION_VIEW);
-		streamIntent.setData(streamURL);
-		streamIntent.setDataAndType(streamURL,"video/*");	
+		streamIntent.setData(streamURL);	
 		startActivity(streamIntent);
 	}
 
