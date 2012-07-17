@@ -1,11 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">TV Replay</string>
-    <string name="selection">Select shows by :</string>
-    <string name="genre">Theme</string>
+	<string name="app_name">Infosat TV</string>
+	<string name="bienvenue">Welcome to Infosat TV !</string> 
+	<string name="selection">Select shows by :</string>
+	<string name="genre">Theme</string>
 	<string name="chaine">Channel</string>
 	<string name="flux">Live</string>
 	<string name="radio">Radio</string>
+	<string name="replay">Replay</string>
 	<string name="erreur_emission">No show found</string>
+	<string name="refresh">Refresh channels</string>
+	<string name="quit">Exit</string>
+	<string name="xmlfile">channnelList.xml</string>
+	<string name="xmlurl"></string>
+	<string name="wait">Please wait</string>
+	<string name="refreshmsg">Refreshing channels &#8230; </string>
+	<string name="replayxmlmsg">Retrieving information &#8230; </string>
 	
 </resources>

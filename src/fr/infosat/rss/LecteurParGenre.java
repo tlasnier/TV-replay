@@ -12,7 +12,7 @@ public class LecteurParGenre extends RSSReader
 	public ArrayList<Emission> raffarichirEmissions(Genre genre)
 	{
 		listeEmissions.clear();
-		parse("http://feeds.feedburner.com/Pluzz-"+genre.getNomURL()+"?format=xml1");
+		parse("http://feeds.feedburner.com/Pluzz-"+genre.getNomURL());
 				for(Emission e : listeEmissions)
 			e.setGenre(genre);
 		return listeEmissions;

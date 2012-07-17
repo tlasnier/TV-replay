@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TV Replay</string>
-    <string name="selection">Sélectionner les émissions par :</string>
-    <string name="genre">Genre</string>
+	<string name="app_name">Infosat TV</string>
+	<string name="bienvenue">Bienvenue dans l\'application Infosat TV !</string>
+	<string name="selection">Sélectionner les émissions par :</string>
+	<string name="genre">Genre</string>
 	<string name="chaine">Chaîne</string>
 	<string name="flux">En Direct</string>
 	<string name="radio">Radio</string>
+	<string name="replay">Replay</string>
 	<string name="erreur_emission">Aucune émission trouvée</string>
-	
+	<string name="refresh">Recherche de canaux</string>
+	<string name="quit">Quitter</string>
+	<string name="xmlfile">channnelList.xml</string>
+	<string name="xmlurl"></string>
+	<string name="wait">Veuillez patienter</string>
+	<string name="refreshmsg">Mise à jour des canaux &#8230; </string>
+	<string name="replayxmlmsg">Récupération des informations &#8230; </string>
+						
 </resources>

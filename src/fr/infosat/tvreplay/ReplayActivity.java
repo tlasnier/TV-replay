@@ -17,7 +17,7 @@ import fr.infosat.rss.Emission.Chaine;
 import fr.infosat.rss.LecteurParChaine;
 
 
-public class ChannelListing extends Activity implements OnItemClickListener
+public class ReplayActivity extends Activity implements OnItemClickListener
 {
 	private ArrayList<Chaine> m_Channels = new ArrayList<Chaine>();
 	private ArrayList<Emission> m_Shows = new ArrayList<Emission>();
@@ -66,7 +66,7 @@ public class ChannelListing extends Activity implements OnItemClickListener
 
 	public void chargerFlux(final Chaine channel)
 	{
-		mProgressDialog= ProgressDialog.show(context, "Veuillez patienter", "Récupération des informations", true);
+		mProgressDialog= ProgressDialog.show(context, getString(R.string.wait), getString(R.string.replayxmlmsg), true);
 		
 		new Thread(){
 			public void run()
@@ -75,7 +75,12 @@ public class ChannelListing extends Activity implements OnItemClickListener
 				m_Shows=reader.raffarichirEmissions(channel);
 				
 				uiThreadCallback.post(runInUIThread);
-				
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				mProgressDialog.dismiss();
 			}
 		}.start();

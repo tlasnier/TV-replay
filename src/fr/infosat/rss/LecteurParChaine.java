@@ -21,7 +21,7 @@ public class LecteurParChaine extends RSSReader
 	{
 		listeEmissions.clear();
 		if(listeChainePluzz.contains(chaine))
-			parse("http://feeds.feedburner.com/Pluzz-"+chaine.getNomURL()+"?format=xml");
+			parse("http://feeds.feedburner.com/Pluzz-"+chaine.getNomURL());
 		else
 			System.out.println("Il reste à trouver la source d'émissions pour cette chaine... Désolé");
 		
