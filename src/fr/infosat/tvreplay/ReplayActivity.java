@@ -21,7 +21,7 @@ public class ReplayActivity extends Activity implements OnItemClickListener
 {
 	private ArrayList<Chaine> m_Channels = new ArrayList<Chaine>();
 	private ArrayList<Emission> m_Shows = new ArrayList<Emission>();
-	CustomAdapterChannel lvAdapter;
+	private CustomAdapterChannel lvAdapter;
 	protected ProgressDialog mProgressDialog;
 	private Context context;
 	final Handler uiThreadCallback=new Handler();

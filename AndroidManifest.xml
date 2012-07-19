@@ -23,15 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity
-            android:screenOrientation="landscape"
-            android:name=".ThemeListing">
-        </activity>
 
         <activity
             android:screenOrientation="landscape"
             android:name=".ReplayActivity">
+        </activity>
+        
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".LiveActivity">
         </activity>
 
         <activity

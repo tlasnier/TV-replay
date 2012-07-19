@@ -11,8 +11,8 @@
 	<string name="erreur_emission">Aucune émission trouvée</string>
 	<string name="refresh">Recherche de canaux</string>
 	<string name="quit">Quitter</string>
-	<string name="xmlfile">channnelList.xml</string>
-	<string name="xmlurl"></string>
+	<string name="xmlfile">channelList.xml</string>
+	<string name="xmlurl">http://perso.mcom.fr/thibault/channelList.xml</string>
 	<string name="wait">Veuillez patienter</string>
 	<string name="refreshmsg">Mise à jour des canaux &#8230; </string>
 	<string name="replayxmlmsg">Récupération des informations &#8230; </string>

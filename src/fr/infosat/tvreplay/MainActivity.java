@@ -8,6 +8,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import fr.infosat.broadcast.Media;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,22 +40,22 @@ public class MainActivity extends Activity
 	
 	public void liveActivity(View view)
 	{
-		if (!channelXML.exists() || !channelXML.isFile())
+		if (!channelXML.exists() )
 			refreshChannels();
 		
 		Intent intent = new Intent(this, LiveActivity.class);
+		intent.putExtra("media", Media.TV);
 		startActivity(intent);
-//		Uri streamURL = Uri.parse("udp://230.0.0.3:1234");
-//		Intent streamIntent = new Intent(Intent.ACTION_VIEW);
-//		streamIntent.setData(streamURL);	
-//		startActivity(streamIntent);
-		
 	}	
 	
 	public void radioActivity(View view)
 	{
-//		Intent intent = new Intent(this, radioActivity.class);
-//		startActivity(intent);
+		if (!channelXML.exists() )
+			refreshChannels();
+		
+		Intent intent = new Intent(this, LiveActivity.class);
+		intent.putExtra("media", Media.RADIO);
+		startActivity(intent);
 	}
 	
 	private void refreshChannels()
@@ -69,11 +71,10 @@ public class MainActivity extends Activity
 		
 		catch (MalformedURLException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		downloadFromInternet(channelXML,url);
+		if (!url.equals("") && !url.equals(null))
+			downloadFromInternet(channelXML,url);
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu)

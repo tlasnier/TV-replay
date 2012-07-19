@@ -11,8 +11,8 @@
 	<string name="erreur_emission">No show found</string>
 	<string name="refresh">Refresh channels</string>
 	<string name="quit">Exit</string>
-	<string name="xmlfile">channnelList.xml</string>
-	<string name="xmlurl"></string>
+	<string name="xmlfile">channelList.xml</string>
+	<string name="xmlurl">http://perso.mcom.fr/thibault/channelList.xml</string>
 	<string name="wait">Please wait</string>
 	<string name="refreshmsg">Refreshing channels &#8230; </string>
 	<string name="replayxmlmsg">Retrieving information &#8230; </string>

@@ -17,11 +17,9 @@ import fr.infosat.rss.Emission;
 public class ShowListing extends Activity implements OnItemClickListener
 {
 	private ArrayList<Emission> m_Shows = new ArrayList<Emission>();
-	CustomAdapterShows lvAdapter;
+	private CustomAdapterShows lvAdapter;
 
-	/** Called when the activity is first created. */
 	@SuppressWarnings("unchecked")
-	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
