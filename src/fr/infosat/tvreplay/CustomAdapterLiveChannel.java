@@ -37,16 +37,14 @@ class CustomAdapterViewLiveChannel extends LinearLayout
 		logoChannel.setMinimumHeight(60);
 		// load image
 		String ic_name= cleanName(channel.getName());
-		//int logo_id = context.getResources().getIdentifier(channel.getNomURL(), "drawable", context.getPackageName());
+		int logo_id = context.getResources().getIdentifier(ic_name, "drawable", context.getPackageName());
 		
-		//if(logo_id==0)
-			int logo_id=context.getResources().getIdentifier("ic_launcher", "drawable", context.getPackageName());
+		if(logo_id==0)
+			logo_id=context.getResources().getIdentifier("ic_launcher", "drawable", context.getPackageName());
 		logoChannel.setImageDrawable(context.getResources().getDrawable(logo_id));
 		//image:add
 		addView(logoChannel, params);			
-		
 
-		//Nom de la chaine
 		TextView textName = new TextView(context);
 		textName.setTextSize(16);
 		textName.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
@@ -61,7 +59,7 @@ class CustomAdapterViewLiveChannel extends LinearLayout
 		String normalized = Normalizer.normalize(res, Form.NFD);
 		res= normalized.replaceAll("[^A-Za-z0-9]", "");
  
-		return null;
+		return res;
 	}
 }
 

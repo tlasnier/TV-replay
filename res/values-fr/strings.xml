@@ -2,19 +2,17 @@
 <resources>
 	<string name="app_name">Infosat TV</string>
 	<string name="bienvenue">Bienvenue dans l\'application Infosat TV !</string>
-	<string name="selection">Sélectionner les émissions par :</string>
-	<string name="genre">Genre</string>
-	<string name="chaine">Chaîne</string>
 	<string name="flux">En Direct</string>
 	<string name="radio">Radio</string>
 	<string name="replay">Replay</string>
 	<string name="erreur_emission">Aucune émission trouvée</string>
 	<string name="refresh">Recherche de canaux</string>
+	<string name="refreshdone">Recherche effectuée</string>
 	<string name="quit">Quitter</string>
 	<string name="xmlfile">channelList.xml</string>
 	<string name="xmlurl">http://perso.mcom.fr/thibault/channelList.xml</string>
 	<string name="wait">Veuillez patienter</string>
-	<string name="refreshmsg">Mise à jour des canaux &#8230; </string>
 	<string name="replayxmlmsg">Récupération des informations &#8230; </string>
+	<string name="no_connection">Accès à Internet requis, veuillez vérifier votre connection &#8230; </string>
 						
 </resources>

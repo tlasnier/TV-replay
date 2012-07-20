@@ -29,7 +29,7 @@ public final class R {
         public static final int ic_action_search=0x7f02000a;
         public static final int ic_launcher=0x7f02000b;
         public static final int itele=0x7f02000c;
-        public static final int la_1ere=0x7f02000d;
+        public static final int la1ere=0x7f02000d;
         public static final int lcp=0x7f02000e;
         public static final int live=0x7f02000f;
         public static final int m6=0x7f020010;
@@ -46,27 +46,24 @@ public final class R {
         public static final int refresh=0x7f070000;
     }
     public static final class layout {
-        public static final int main_activity=0x7f030000;
-        public static final int menu=0x7f030001;
-        public static final int option=0x7f030002;
+        public static final int menu=0x7f030000;
+        public static final int option=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
         public static final int bienvenue=0x7f050001;
-        public static final int chaine=0x7f050004;
-        public static final int erreur_emission=0x7f050008;
-        public static final int flux=0x7f050005;
-        public static final int genre=0x7f050003;
-        public static final int quit=0x7f05000a;
-        public static final int radio=0x7f050006;
-        public static final int refresh=0x7f050009;
-        public static final int refreshmsg=0x7f05000e;
-        public static final int replay=0x7f050007;
-        public static final int replayxmlmsg=0x7f05000f;
-        public static final int selection=0x7f050002;
-        public static final int wait=0x7f05000d;
-        public static final int xmlfile=0x7f05000b;
-        public static final int xmlurl=0x7f05000c;
+        public static final int erreur_emission=0x7f050005;
+        public static final int flux=0x7f050002;
+        public static final int no_connection=0x7f05000d;
+        public static final int quit=0x7f050008;
+        public static final int radio=0x7f050003;
+        public static final int refresh=0x7f050006;
+        public static final int refreshdone=0x7f050007;
+        public static final int replay=0x7f050004;
+        public static final int replayxmlmsg=0x7f05000c;
+        public static final int wait=0x7f05000b;
+        public static final int xmlfile=0x7f050009;
+        public static final int xmlurl=0x7f05000a;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;

@@ -33,21 +33,19 @@ public class ReplayActivity extends Activity implements OnItemClickListener
 	{
 		super.onCreate(savedInstanceState);
 		context =this;
-		ListView ls2 = new ListView(context);
+		ListView lsv = new ListView(context);
 
-		// clear previous results in the LV
-		ls2.setAdapter(null);        
-		// populate
+		lsv.setAdapter(null);        
 		m_Channels.clear();
 		Chaine[] ls_channel =Chaine.values();
 		for(int i=0;i<ls_channel.length;i++)
 			m_Channels.add(ls_channel[i]);
 
 		lvAdapter =  new CustomAdapterChannel(context, m_Channels);
-		ls2.setAdapter(lvAdapter);
-		ls2.setOnItemClickListener(this);
+		lsv.setAdapter(lvAdapter);
+		lsv.setOnItemClickListener(this);
 
-		setContentView(ls2);
+		setContentView(lsv);
 
 		runInUIThread=new Runnable() {
 			public void run()

@@ -1,6 +1,8 @@
 package fr.infosat.tvreplay;
 
 
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
 import java.util.List;
 
 import android.content.Context;
@@ -34,21 +36,29 @@ class CustomAdapterViewChannel extends LinearLayout
 		ImageView logoChannel = new ImageView(context);
 		logoChannel.setMinimumHeight(60);
 		// load image
-		int logo_id = context.getResources().getIdentifier(channel.getNomURL(), "drawable", context.getPackageName());
+		int logo_id = context.getResources().getIdentifier(cleanName(channel.name()), "drawable", context.getPackageName());
 		
 		if(logo_id==0)
 			logo_id=context.getResources().getIdentifier("ic_launcher", "drawable", context.getPackageName());
 		logoChannel.setImageDrawable(context.getResources().getDrawable(logo_id));
 		//image:add
 		addView(logoChannel, params);			
-		
 
-		//Nom de la chaine
 		TextView textName = new TextView(context);
 		textName.setTextSize(16);
 		textName.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 		textName.setText(channel.getLabel());
 		addView(textName);
+	}
+	
+	private String cleanName(String name)
+	{
+		String res = name.toLowerCase();
+		res = Normalizer.normalize(res, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+		String normalized = Normalizer.normalize(res, Form.NFD);
+		res= normalized.replaceAll("[^A-Za-z0-9]", "");
+ 
+		return res;
 	}
 }
 
