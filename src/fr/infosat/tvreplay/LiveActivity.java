@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 import fr.infosat.broadcast.ContainerData;
 import fr.infosat.broadcast.LiveChannel;
 import fr.infosat.broadcast.Media;
@@ -51,6 +52,12 @@ public class LiveActivity extends Activity implements OnItemClickListener
 		Uri streamURL = Uri.parse(channelList.get(pos).getUrl());
 		Intent streamIntent = new Intent(Intent.ACTION_VIEW);
 		streamIntent.setData(streamURL);	
-		startActivity(streamIntent);
+		if(context.getPackageManager().queryIntentActivities(streamIntent, 0).isEmpty())
+		{
+			Toast t = Toast.makeText(context, R.string.no_app_found, Toast.LENGTH_LONG);
+			t.show();
+		}
+		else
+			startActivity(streamIntent);
 	}
 }

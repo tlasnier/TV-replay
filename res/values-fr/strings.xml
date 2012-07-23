@@ -14,5 +14,6 @@
 	<string name="wait">Veuillez patienter</string>
 	<string name="replayxmlmsg">Récupération des informations &#8230; </string>
 	<string name="no_connection">Accès à Internet requis, veuillez vérifier votre connection &#8230; </string>
-						
+	<string name="no_app_found">Veuillez installer MX Player, disponible sur le  Play Store</string>
+							
 </resources>

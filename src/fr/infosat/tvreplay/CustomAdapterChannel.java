@@ -65,7 +65,6 @@ class CustomAdapterViewChannel extends LinearLayout
 
 public class CustomAdapterChannel extends BaseAdapter
 {
-	public static final String LOG_TAG = "BI::CA";
 	private Context context;
 	private List<Chaine> channelList;
 

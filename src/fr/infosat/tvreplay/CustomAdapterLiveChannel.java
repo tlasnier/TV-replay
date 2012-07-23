@@ -24,26 +24,21 @@ class CustomAdapterViewLiveChannel extends LinearLayout
 	{
 		super(context);
 
-		//container is a horizontal layer
 		setOrientation(LinearLayout.HORIZONTAL);
 		setPadding(0, 6, 0, 6);
 		setGravity(Gravity.CENTER_VERTICAL);
-		
-		//image:params
+
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(80, LayoutParams.WRAP_CONTENT);
 		params.setMargins(6, 0, 6, 0);
-		//image:itself
 		ImageView logoChannel = new ImageView(context);
 		logoChannel.setMinimumHeight(60);
-		// load image
 		String ic_name= cleanName(channel.getName());
 		int logo_id = context.getResources().getIdentifier(ic_name, "drawable", context.getPackageName());
-		
+
 		if(logo_id==0)
 			logo_id=context.getResources().getIdentifier("ic_launcher", "drawable", context.getPackageName());
 		logoChannel.setImageDrawable(context.getResources().getDrawable(logo_id));
-		//image:add
-		addView(logoChannel, params);			
+		addView(logoChannel, params);
 
 		TextView textName = new TextView(context);
 		textName.setTextSize(16);
@@ -58,7 +53,8 @@ class CustomAdapterViewLiveChannel extends LinearLayout
 		res = Normalizer.normalize(res, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 		String normalized = Normalizer.normalize(res, Form.NFD);
 		res= normalized.replaceAll("[^A-Za-z0-9]", "");
- 
+		if(Character.isDigit(res.charAt(0)))
+			res="channel"+res;
 		return res;
 	}
 }
@@ -66,7 +62,6 @@ class CustomAdapterViewLiveChannel extends LinearLayout
 
 public class CustomAdapterLiveChannel extends BaseAdapter
 {
-	public static final String LOG_TAG = "BI::CA";
 	private Context context;
 	private List<LiveChannel> channelList;
 

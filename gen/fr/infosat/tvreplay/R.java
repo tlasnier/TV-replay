@@ -54,6 +54,7 @@ public final class R {
         public static final int bienvenue=0x7f050001;
         public static final int erreur_emission=0x7f050005;
         public static final int flux=0x7f050002;
+        public static final int no_app_found=0x7f05000e;
         public static final int no_connection=0x7f05000d;
         public static final int quit=0x7f050008;
         public static final int radio=0x7f050003;

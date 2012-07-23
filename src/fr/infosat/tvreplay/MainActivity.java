@@ -1,17 +1,12 @@
 package fr.infosat.tvreplay;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -35,23 +30,6 @@ public class MainActivity extends Activity
 		channelXML = new File(xmlpath, getString(R.string.xmlfile));
 		m_context=this;		
 	}
-
-	public boolean checkInternet(Context context) 
-	{
-		ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo wifi = connec.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		android.net.NetworkInfo mobile = connec.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
-		if (wifi.isConnected())
-		{
-			return true;
-		} else if (mobile.isConnected())
-		{
-			return true;
-		}
-		return false;
-	}
-
 
 	public void replayActivity(View view)
 	{
@@ -101,9 +79,9 @@ public class MainActivity extends Activity
 
 		Toast t = Toast.makeText(m_context,"",Toast.LENGTH_LONG);
 		t.setDuration(Toast.LENGTH_LONG);
-		if (checkInternet(m_context))
+		if (InternetConnection.hasActiveInternetConnection(m_context))
 		{
-			downloadFromInternet(channelXML,url);
+			InternetConnection.downloadFromInternet(channelXML,url);
 			t.setText(R.string.refreshdone);
 		}
 		else
@@ -149,36 +127,4 @@ public class MainActivity extends Activity
 		}
 		return ret;
 	}
-
-	private void downloadFromInternet(File file, URL url )
-	{
-		try
-		{
-			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-
-			urlConnection.setRequestMethod("GET");
-			urlConnection.setDoOutput(true);
-
-			urlConnection.connect();
-
-			FileOutputStream fileOutput = new FileOutputStream(file);
-
-			InputStream inputStream = urlConnection.getInputStream();
-
-			byte[] buffer = new byte[1024];
-			int bufferLength = 0;
-
-			while ( (bufferLength = inputStream.read(buffer)) > 0 )
-				fileOutput.write(buffer, 0, bufferLength);
-
-			fileOutput.close();
-
-		}
-
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-	}
-
 }
