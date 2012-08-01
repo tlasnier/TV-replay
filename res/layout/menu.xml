@@ -3,8 +3,8 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical" >
-
-    <TextView
+	
+	<TextView
 		android:layout_gravity="center_horizontal"
 		android:textSize="24dp"
 		android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
 			android:clickable="true"
 			android:onClick="replayActivity"/>
 	    	
-    	<TextView
+		<TextView
 			android:layout_gravity="center_vertical"
 			android:gravity="center_horizontal" 
 			android:drawableTop="@drawable/live"
@@ -44,7 +44,7 @@
 			android:clickable="true"
 			android:onClick="liveActivity"/>
     	
-    	<TextView
+		<TextView
 			android:layout_gravity="center_vertical"
 			android:gravity="center_horizontal" 
 			android:drawableTop="@drawable/radio"

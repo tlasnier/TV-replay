@@ -1,9 +1,12 @@
 package fr.infosat.tvreplay;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -40,35 +43,30 @@ public class InternetConnection
 
 	public static void downloadFromInternet(File file, URL url )
 	{
+		BufferedReader in;
+		String readLine;
 		try
 		{
-			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+			in = new BufferedReader(new InputStreamReader(url.openStream(), "ISO-8859-1"));
+			BufferedWriter out = new BufferedWriter(new FileWriter(file));
 
-			urlConnection.setRequestMethod("GET");
-			urlConnection.setDoOutput(true);
-
-			urlConnection.connect();
-
-			FileOutputStream fileOutput = new FileOutputStream(file);
-
-			InputStream inputStream = urlConnection.getInputStream();
-
-			byte[] buffer = new byte[1024];
-			int bufferLength = 0;
-
-			while ( (bufferLength = inputStream.read(buffer)) > 0 )
-				fileOutput.write(buffer, 0, bufferLength);
-
-			fileOutput.close();
-
+			while ((readLine = in.readLine()) != null)
+				out.write(readLine+"\n");
+				
+			out.close();
 		}
-
+		
+		catch (UnsupportedEncodingException e)
+		{
+			e.printStackTrace();
+		}
+		
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
 	}
-//======================================= = = = A vérifier = = = ======================================================	
+	//======================================= = = = A vérifier = = = ======================================================	
 	public static boolean checkInternet(Context context) 
 	{
 		ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);

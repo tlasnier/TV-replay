@@ -52,7 +52,7 @@ public class Emission implements Serializable
 		LCP("LCP","lcp"),
 		BFMTV("BFM TV","bfmtv"),
 		ITELE("I>Télé","itele"),
-		Virgin17("DirectStar","directstar"),
+		DirectStar("DirectStar","directstar"),
 		Gulli("Gulli","gulli"),
 		Franceo("France Ô","franceo");
 		

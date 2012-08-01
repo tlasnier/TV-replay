@@ -66,16 +66,18 @@ public class ReplayActivity extends Activity implements OnItemClickListener
 	{
 		mProgressDialog= ProgressDialog.show(context, getString(R.string.wait), getString(R.string.replayxmlmsg), true);
 		
-		new Thread(){
+		new Thread() {
 			public void run()
 			{
 				LecteurParChaine reader = new LecteurParChaine();
 				m_Shows=reader.raffarichirEmissions(channel);
 				
 				uiThreadCallback.post(runInUIThread);
-				try {
+				try
+				{
 					Thread.sleep(2000);
-				} catch (InterruptedException e) {
+				} catch (InterruptedException e)
+				{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
