@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////
+//												//
+//		Classe de lecture d'un flux RSS			// 
+//												//
+//////////////////////////////////////////////////
+
 package fr.infosat.rss;
 import java.io.IOException;
 import java.net.URL;
@@ -49,12 +55,6 @@ public abstract class RSSReader
 		}
 	}
 
-	/**
-	 * Méthode permettant de retourner ce que contient un noeud
-	 * @param _node le noeud principal
-	 * @param _path suite des noms des noeud sans espace séparer par des "|"
-	 * @return un string contenant le valeur du noeud voulu
-	 */
 	public String readNode(Node _node, String _path)
 	{
 		String[] paths = _path.split("\\|");
@@ -74,12 +74,6 @@ public abstract class RSSReader
 			return "";
 	}
 
-	/**
-	 * renvoie le nom d'un noeud fils à partir de son nom
-	 * @param _node noeud pricipal
-	 * @param _name nom du noeud fils
-	 * @return le noeud fils
-	 */
 	public Node getChildByName(Node _node, String _name)
 	{
 		if (_node == null)
@@ -99,11 +93,7 @@ public abstract class RSSReader
 		return null;
 	}
 
-	/**
-	 * Afficher une Date GMT au format francais
-	 * @param gmtDate
-	 * @return
-	 */
+	//Méthode de conversion de format des dates 
 	public String GMTDateToFrench(String gmtDate)
 	{
 		try
@@ -129,5 +119,6 @@ public abstract class RSSReader
 		return partition[0];
 	}
 	
+	//Méthode générique à implémenter selon le traitement à effectuer
 	public abstract void traiterElement(Node element);
 }

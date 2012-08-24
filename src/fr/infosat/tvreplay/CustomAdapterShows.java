@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//																								//
+//		Classe de description de l'affichage d'une liste de d'émissions en rediffusion 			// 
+//																								//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
 package fr.infosat.tvreplay;
 
 
@@ -22,11 +28,9 @@ class CustomAdapterView extends LinearLayout
 	{
 		super( context );
 
-		//container is a horizontal layer
 		setOrientation(LinearLayout.HORIZONTAL);
 		setPadding(6, 6, 6, 6);
 
-		//vertical layer for text
 		LinearLayout.LayoutParams Params = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 		LinearLayout PanelV = new LinearLayout(context);
 		PanelV.setOrientation(LinearLayout.VERTICAL);
@@ -52,7 +56,6 @@ class CustomAdapterView extends LinearLayout
 
 public class CustomAdapterShows extends BaseAdapter
 {
-	public static final String LOG_TAG = "BI::CA";
 	private Context context;
 	private List<Emission> showList;
 

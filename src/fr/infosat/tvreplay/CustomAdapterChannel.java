@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//																								//
+//		Classe de description de l'affichage d'une liste de chaines pour rediffusion			// 
+//																								//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
 package fr.infosat.tvreplay;
 
 
@@ -24,19 +30,16 @@ class CustomAdapterViewChannel extends LinearLayout
 	{
 		super(context);
 
-		//container is a horizontal layer
 		setOrientation(LinearLayout.HORIZONTAL);
 		setPadding(0, 6, 0, 6);
 		setGravity(Gravity.CENTER_VERTICAL);
 		
-		//image:params
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(80, LayoutParams.WRAP_CONTENT);
 		params.setMargins(6, 0, 6, 0);
-		//image:itself
 		ImageView logoChannel = new ImageView(context);
 		logoChannel.setMinimumHeight(60);
-		// load image
-		int logo_id = context.getResources().getIdentifier(cleanName(channel.name()), "drawable", context.getPackageName());
+		String ic_name= cleanName(channel.name());
+		int logo_id = context.getResources().getIdentifier(ic_name, "drawable", context.getPackageName());
 		
 		if(logo_id==0)
 			logo_id=context.getResources().getIdentifier("ic_launcher", "drawable", context.getPackageName());
@@ -61,7 +64,6 @@ class CustomAdapterViewChannel extends LinearLayout
 		return res;
 	}
 }
-
 
 public class CustomAdapterChannel extends BaseAdapter
 {

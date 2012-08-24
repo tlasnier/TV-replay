@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////
+//														//
+//		Activité du choix de l'émission en Replay		// 
+//														//
+//////////////////////////////////////////////////////////
+
 package fr.infosat.tvreplay;
 
 import java.util.ArrayList;
@@ -17,7 +23,7 @@ import fr.infosat.rss.Emission;
 public class ShowListing extends Activity implements OnItemClickListener
 {
 	private ArrayList<Emission> m_Shows = new ArrayList<Emission>();
-	private CustomAdapterShows lvAdapter;
+	private CustomAdapterShows listViewAdapter;
 
 	@SuppressWarnings("unchecked")
 	public void onCreate(Bundle savedInstanceState)
@@ -26,23 +32,21 @@ public class ShowListing extends Activity implements OnItemClickListener
 		final Context context = this;
 		Intent intent=getIntent();
 		m_Shows= (ArrayList<Emission>) intent.getSerializableExtra("listShow");
-		ListView ls2 = new ListView(context);
+		ListView list = new ListView(context);
 
-		ls2.setAdapter(null);        
+		list.setAdapter(null);        
 		if(!m_Shows.isEmpty())
 		{
-			lvAdapter =  new CustomAdapterShows(context, m_Shows);
-			ls2.setAdapter(lvAdapter);
-			ls2.setOnItemClickListener(this);
-			setContentView(ls2);
+			listViewAdapter =  new CustomAdapterShows(context, m_Shows);
+			list.setAdapter(listViewAdapter);
+			list.setOnItemClickListener(this);
+			setContentView(list);
 		}
 		
 		else
 		{
-			Toast t= Toast.makeText(context, R.string.erreur_emission, Toast.LENGTH_LONG);
-			t.show();
+			Toast.makeText(context, R.string.erreur_emission, Toast.LENGTH_LONG).show();
 		}
-		
 	}
 
 	public void onItemClick(AdapterView<?> arg0, View view,int pos, long id) 

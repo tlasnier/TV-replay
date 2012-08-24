@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////////
+//															//
+//		Activité de choix de la chaine en direct 			// 
+//															//
+//////////////////////////////////////////////////////////////
+
 package fr.infosat.tvreplay;
 
 import java.io.File;
@@ -24,7 +30,7 @@ public class LiveActivity extends Activity implements OnItemClickListener
 	private String xmlpath;
 	private ArrayList<LiveChannel> channelList= new ArrayList<LiveChannel>();
 	private Context context;
-	private CustomAdapterLiveChannel lvAdapter;
+	private CustomAdapterLiveChannel listViewAdapter;
 
 
 	public void onCreate(Bundle savedInstanceState)
@@ -33,31 +39,35 @@ public class LiveActivity extends Activity implements OnItemClickListener
 		xmlpath = Environment.getExternalStorageDirectory()+"/InfosatTV/";
 		channelXML= new File(xmlpath, getString(R.string.xmlfile));
 
-		//parser fichier xml dans la sdcard
+		//parser fichier xml dans la sdcard, seulement la partie intéressante(TV ou Radio)
 		Media media =(Media) getIntent().getSerializableExtra("media");
 		channelList=ContainerData.getChannels(channelXML, media);
 		
-		//list view pour présenter les chaines
+		//list view pour afficher les chaines
 		context =this;
-		ListView ls2 = new ListView(context);
-		ls2.setAdapter(null);        
-		lvAdapter =  new CustomAdapterLiveChannel(context, channelList);
-		ls2.setAdapter(lvAdapter);
-		ls2.setOnItemClickListener(this);
-		setContentView(ls2);
+		ListView list = new ListView(context);
+		list.setAdapter(null);        
+		listViewAdapter =  new CustomAdapterLiveChannel(context, channelList);
+		list.setAdapter(listViewAdapter);
+		list.setOnItemClickListener(this);
+		setContentView(list);
 	}
 
 	public void onItemClick(AdapterView<?> arg0, View view,int pos, long id) 
 	{
 		Uri streamURL = Uri.parse(channelList.get(pos).getUrl());
 		Intent streamIntent = new Intent(Intent.ACTION_VIEW);
-		streamIntent.setData(streamURL);	
+		streamIntent.setData(streamURL);
+		
+		//	on teste l'existence d'une application capable de lire le flux.
+		//	Si l'ArrayList contenant les applications convenables est vide, on affiche une errreur.
+		//	sinon, on lance la nouvelle activité.
 		if(context.getPackageManager().queryIntentActivities(streamIntent, 0).isEmpty())
-		{
-			Toast t = Toast.makeText(context, R.string.no_app_found, Toast.LENGTH_LONG);
-			t.show();
-		}
+			Toast.makeText(context, R.string.no_app_found, Toast.LENGTH_LONG).show();
 		else
+		{
+			Toast.makeText(context, R.string.player_launched, Toast.LENGTH_LONG).show();
 			startActivity(streamIntent);
+		}
 	}
 }

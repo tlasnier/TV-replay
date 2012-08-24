@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////////////////////
+//																		//
+//		Classe de lecture d'un flux RSS	d'une chaine particulière		// 
+//																		//
+//////////////////////////////////////////////////////////////////////////
+
 package fr.infosat.rss;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,8 +28,6 @@ public class LecteurParChaine extends RSSReader
 		listeEmissions.clear();
 		if(listeChainePluzz.contains(chaine))
 			parse("http://feeds.feedburner.com/Pluzz-"+chaine.getNomURL());
-		else
-			System.out.println("Il reste à trouver la source d'émissions pour cette chaine... Désolé");
 		
 		for(Emission e : listeEmissions)
 			e.setChaine(chaine);

@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Infosat TV</string>
-	<string name="bienvenue">Bienvenue dans l\'application Infosat TV !</string>
-	<string name="flux">En Direct</string>
-	<string name="radio">Radio</string>
-	<string name="replay">Replay</string>
-	<string name="erreur_emission">Aucune émission trouvée</string>
-	<string name="refresh">Recherche de canaux</string>
-	<string name="refreshdone">Recherche effectuée</string>
-	<string name="quit">Quitter</string>
-	<string name="xmlfile">channelList.xml</string>
-	<string name="xmlurl">http://perso.mcom.fr/thibault/channelList.xml</string>
-	<string name="wait">Veuillez patienter</string>
-	<string name="replayxmlmsg">Récupération des informations &#8230; </string>
-	<string name="no_connection">Accès à Internet requis, veuillez vérifier votre connection &#8230; </string>
-	<string name="no_app_found">Veuillez installer MX Player, disponible sur le  Play Store</string>
-							
+
+    <string name="app_name">Infosat TV</string>
+    <string name="bienvenue">Bienvenue dans l\'application Infosat TV !</string>
+    <string name="flux">En Direct</string>
+    <string name="radio">Radio</string>
+    <string name="replay">Replay</string>
+    <string name="erreur_emission">Aucune émission trouvée</string>
+    <string name="refresh">Recherche de canaux</string>
+    <string name="refreshdone">Recherche effectuée</string>
+    <string name="quit">Quitter</string>
+    <string name="help">Aide</string>
+    <string name="xmlfile">channelList.xml</string>
+    <string name="xmlurl">http://perso.mcom.fr/thibault/channelList.xml</string>
+    <string name="wait">Veuillez patienter</string>
+    <string name="replayxmlmsg">Récupération des informations &#8230; </string>
+    <string name="no_connection">Accès à Internet requis, veuillez vérifier votre connection &#8230; </string>
+    <string name="no_app_found">Veuillez installer MX Player, disponible sur le  Play Store</string>
+    <string name="error">Erreur</string>
+    <string name="no_sd_card">La carte SD n\'est pas présente</string>
+    <string name="player_launched">Le lecteur est lancé</string>
+    <string name="help_txt">Contenu de l\'application
+\n===================
+\n \t Cette application est destinée aux abonnés Infosat Telecom. Elle permet de profiter de la télévision en direct, en rediffusion, et également de la radio. Une fois connecté à votre réseau, vous pouvez profiter de ces contenus.
+\n
+\nPremière utilisation
+\n===============
+\n \t Afin de pouvoir bénéficier de la télévision et de la radio en direct, vous devez installer un lecteur compatible. Nous vous conseillons d\'installer MX Player ou VLC, disponibles tous les deux gratuitement sur le Play Store.
+\n \t Ensuite, sur l\'écran d\'accueil de l\'appplication, ouvrez le menu et sélectionnez \"Recherche de canaux\". Vous pouvez maintenant bénéficier des services Infosat TV.
+\n
+\nQue faire si ça ne marche pas?
+\n=======================
+\n \t *Il se peut qu\'Infosat ait changé les chaînes diffusées ou le canal de diffusion. Pour régler ce problème, allez sur l\'écran d\'accueil de l\'appplication, ouvrez le menu, puis sélectionnez \"Recherche de canaux\".
+\n
+\n \t *Si vous sélectionnez une chaîne et qu\'il ne se passe rien, ou qu\'un message d\'erreur est affiché, il se peut que :
+\n \t \t -vous n\'ayez pas installé de lecteur compatible. Tous les lecteurs ne sont pas compatibles. Essayez avec MX Player ou VLC, ils sont gratuits et disponibles sur le Play Store.
+\n
+\n \t \t -vous ne soyez pas connecté au bon réseau. Vérifiez que vous êtes bien connecté au réseau fourni par Infosat.
+\n	
+\n \t *Si le problème persiste, contactez la hotline pour obtenir de l\'aide. Au téléphone : 0811.032.012 (numéro non surtaxé) ou par mail : hotline@mcom.fr.</string>
+
 </resources>

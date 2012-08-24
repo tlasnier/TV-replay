@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////
+//														//
+//		Activité du choix de la chaine en Replay		// 
+//														//
+//////////////////////////////////////////////////////////
+
 package fr.infosat.tvreplay;
 
 import java.util.ArrayList;
@@ -21,31 +27,29 @@ public class ReplayActivity extends Activity implements OnItemClickListener
 {
 	private ArrayList<Chaine> m_Channels = new ArrayList<Chaine>();
 	private ArrayList<Emission> m_Shows = new ArrayList<Emission>();
-	private CustomAdapterChannel lvAdapter;
+	private CustomAdapterChannel listViewAdapter;
 	protected ProgressDialog mProgressDialog;
 	private Context context;
 	final Handler uiThreadCallback=new Handler();
 	private Runnable runInUIThread;
 
-	/** Called when the activity is first created. */
-	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		context =this;
-		ListView lsv = new ListView(context);
+		ListView list = new ListView(context);
 
-		lsv.setAdapter(null);        
+		list.setAdapter(null);        
 		m_Channels.clear();
 		Chaine[] ls_channel =Chaine.values();
 		for(int i=0;i<ls_channel.length;i++)
 			m_Channels.add(ls_channel[i]);
 
-		lvAdapter =  new CustomAdapterChannel(context, m_Channels);
-		lsv.setAdapter(lvAdapter);
-		lsv.setOnItemClickListener(this);
+		listViewAdapter =  new CustomAdapterChannel(context, m_Channels);
+		list.setAdapter(listViewAdapter);
+		list.setOnItemClickListener(this);
 
-		setContentView(lsv);
+		setContentView(list);
 
 		runInUIThread=new Runnable() {
 			public void run()
@@ -62,6 +66,7 @@ public class ReplayActivity extends Activity implements OnItemClickListener
 		chargerFlux(Chaine.values()[pos]);
 	}
 
+	//chargement et traitement du flux RSS dans un thread séparé
 	public void chargerFlux(final Chaine channel)
 	{
 		mProgressDialog= ProgressDialog.show(context, getString(R.string.wait), getString(R.string.replayxmlmsg), true);
@@ -73,17 +78,9 @@ public class ReplayActivity extends Activity implements OnItemClickListener
 				m_Shows=reader.raffarichirEmissions(channel);
 				
 				uiThreadCallback.post(runInUIThread);
-				try
-				{
-					Thread.sleep(2000);
-				} catch (InterruptedException e)
-				{
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+
 				mProgressDialog.dismiss();
 			}
 		}.start();
-
 	}
 }

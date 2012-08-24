@@ -40,6 +40,11 @@
             android:name=".ShowListing">
         </activity>
         
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".HelpActivity">
+        </activity>
+        
     </application>
 
 </manifest>

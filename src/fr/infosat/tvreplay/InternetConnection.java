@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//																														//
+//		Classe d'utilisation d'une connection Internet (Téléchargement d'un fichier, test d'une connexion...) 			// 
+//																														//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 package fr.infosat.tvreplay;
 
 import java.io.BufferedReader;
@@ -52,34 +58,18 @@ public class InternetConnection
 
 			while ((readLine = in.readLine()) != null)
 				out.write(readLine+"\n");
-				
+
 			out.close();
 		}
-		
+
 		catch (UnsupportedEncodingException e)
 		{
 			e.printStackTrace();
 		}
-		
+
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
-	}
-	//======================================= = = = A vérifier = = = ======================================================	
-	public static boolean checkInternet(Context context) 
-	{
-		ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo wifi = connec.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		android.net.NetworkInfo mobile = connec.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
-		if (wifi.isConnected())
-		{
-			return true;
-		} else if (mobile.isConnected())
-		{
-			return true;
-		}
-		return false;
 	}
 }

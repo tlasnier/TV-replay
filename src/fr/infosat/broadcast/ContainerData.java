@@ -1,3 +1,9 @@
+//////////////////////////////////////////////////////////////
+//															//
+//		Parsing d'un fichier XML via une méthode static		//
+//															//
+//////////////////////////////////////////////////////////////
+
 package fr.infosat.broadcast;
 
 import java.io.File;
@@ -10,14 +16,9 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXException;
 
-import android.content.Context;
-
 public class ContainerData
 {	
-	static public Context context;
-
-	public ContainerData() {}
-
+	//Méthode qui renvoie une liste de Chaînes, selon le média sélectionné (TV ou Radio)
 	public static ArrayList<LiveChannel> getChannels(File file, Media media)
 	{
 		// On passe par une classe factory pour obtenir une instance de sax
@@ -38,10 +39,9 @@ public class ContainerData
 			e.printStackTrace();
 		}
 
-		/*
-		 * Le handler sera gestionnaire du fichier XML c'est à dire que c'est lui qui sera chargé
-		 * des opérations de parsing. On vera cette classe en détails ci après.
-		 */
+		//	Le handler est une instance qui se charge du parsing du fichier.
+		//	On déclare une instance d'une sous-classe pour lui donner les propriétés que l'on souhaite.
+		//	En l'occurence, parser le fichier XML que l'on écrit nous-même.
 		ParserXMLHandler handler = new ParserXMLHandler(media);
 		try
 		{

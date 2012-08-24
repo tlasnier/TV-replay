@@ -9,11 +9,34 @@
 	<string name="refresh">Refresh channels</string>
 	<string name="refreshdone">Channels refreshed</string>
 	<string name="quit">Exit</string>
+	<string name="help">Help</string>
 	<string name="xmlfile">channelList.xml</string>
 	<string name="xmlurl">http://perso.mcom.fr/thibault/channelList.xml</string>
 	<string name="wait">Please wait</string>
 	<string name="replayxmlmsg">Retrieving information &#8230; </string>
 	<string name="no_connection">Acces to the Internet required, please check your connection &#8230; </string>
 	<string name="no_app_found">Please install MX Player, available on Play Store</string>
+	<string name="error">Error</string>
+	<string name="no_sd_card">SD Card is not present</string>
+	<string name="player_launched">Player is running</string>
+	<string name="help_txt">Application feaures
+\n===============
+\n \t This app has been designed for Infosat Telecom customers. It allows you to enjoy replay and live TV, as well as radio. Once connected to your network, you can enjoy these features.
+\n
+\nFirst use
+\n=======
+\n \t In order to enjoy live TV and radio, you will have to install the suitable player. We advice you to install MX Player or VLC, both free and available on the Play Store.
+\n \t Then, on the application\'s main screen, open the menu and select \"Refresh channels\". You can now enjoy Infosat TV services.
+\n
+\nWhat can I do if it does not work?
+\n==========================
+\n \t *Infosat might have change channels which are emitted. In this case, you just have to go to the application\'s main screen, open the menu, and select \"Refresh channels\".
+\n
+\n \t *If you have selected a channel, and nothing happens after a few seconds, the issue might be that :
+\n \t \t -you did not install a suitable player. Some players are not suitable for this app. Try with MX Player or VLC, both free and available on the Play Store.
+\n
+\n \t \t -you are not connected to the right network. Check if you are connected to the network provided by Infosat Telecom.
+\n	
+\n \t *If your issue persists, please feel free to contact the hotline to get some help. By phone : 0811.032.012 (non-surcharged call) or by e-mail : hotline@mcom.fr.</string>
 	
 </resources>
