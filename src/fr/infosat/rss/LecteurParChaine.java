@@ -45,6 +45,9 @@ public class LecteurParChaine extends RSSReader
 		listeEmissions.add(em);
 	}
 
-	public ArrayList<Emission> getListeEmissions(){return listeEmissions;}
+	public ArrayList<Emission> getListeEmissions()
+	{
+		return listeEmissions;
+	}
 
 }

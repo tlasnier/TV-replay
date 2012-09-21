@@ -60,7 +60,7 @@ public class LiveActivity extends Activity implements OnItemClickListener
 		streamIntent.setData(streamURL);
 		
 		//	on teste l'existence d'une application capable de lire le flux.
-		//	Si l'ArrayList contenant les applications convenables est vide, on affiche une errreur.
+		//	Si l'ArrayList contenant les applications convenables est vide, on affiche une erreur.
 		//	sinon, on lance la nouvelle activité.
 		if(context.getPackageManager().queryIntentActivities(streamIntent, 0).isEmpty())
 			Toast.makeText(context, R.string.no_app_found, Toast.LENGTH_LONG).show();

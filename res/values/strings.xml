@@ -33,9 +33,11 @@
 \n \t *Infosat might have change channels which are emitted. In this case, you just have to go to the application\'s main screen, open the menu, and select \"Refresh channels\".
 \n
 \n \t *If you have selected a channel, and nothing happens after a few seconds, the issue might be that :
-\n \t \t -you did not install a suitable player. Some players are not suitable for this app. Try with MX Player or VLC, both free and available on the Play Store.
+\n \t \t -You did not install a suitable player. Some players are not suitable for this app. Try with MX Player or VLC, both free and available on the Play Store.
 \n
-\n \t \t -you are not connected to the right network. Check if you are connected to the network provided by Infosat Telecom.
+\n \t \t -Your apllication might not been updated. Please check for an udpate on the Play Store.
+\n
+\n \t \t -You are not connected to the right network. Check if you are connected to the network provided by Infosat Telecom.
 \n	
 \n \t *If your issue persists, please feel free to contact the hotline to get some help. By phone : 0811.032.012 (non-surcharged call) or by e-mail : hotline@mcom.fr.</string>
 	
